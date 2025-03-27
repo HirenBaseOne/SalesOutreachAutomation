@@ -1,4 +1,4 @@
-# 🧠 BaseOne Crew – Email Automation Agents
+#  ![BaseOne Crew](./assets/baseone-logo.jpg) BaseOne Crew – Email Automation Agents
 
 ## 📚 Table of Contents
 - [📖 Overview](#overview)
@@ -184,5 +184,5 @@ Make sure to:
 
 ---
 
-**Built with 💡 by Sensai**  
+**Built by ![SensAI](./assets/Vignette_lkd.png)**  
 _Elevating enterprise efficiency through agentic intelligence_
