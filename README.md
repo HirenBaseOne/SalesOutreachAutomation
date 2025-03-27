@@ -1,4 +1,4 @@
-# {{crew_name}} Crew
+# BaseOne Crew
 
 Welcome to the BaseOne Email Automation Agents Crew project, powered by [SenAI](https://sensai-consulting.com). This template is designed to automate email campaigns, responses and communication across different modalities
 
