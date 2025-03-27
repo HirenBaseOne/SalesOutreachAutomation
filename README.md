@@ -1,9 +1,75 @@
 # 🧠 BaseOne Crew – Email Automation Agents
 
+## 📚 Table of Contents
+- [📖 Overview](#overview)
+- [🧩 Solution Overview](#-solution-overview)
+- [🏗 Workflow Architecture](#-workflow-architecture)
+- [🏗 AWS Architecture](#-aws-architecture)
+- [💰 Cost](#-cost)
+  - [💰 Sample Monthly Cost Breakdown (100,000 Emails Processed)](#-sample-monthly-cost-breakdown-100000-emails-processed)
+- [🚀 Installation](#-installation)
+- [⚙️ Configuration & Customisation](#-configuration--customisation)
+- [▶️ Running the Project](#-running-the-project)
+- [👥 Understanding Your Crew](#-understanding-your-crew)
+- [📞 Support](#-support)
+- [✅ Final Notes](#-final-notes)
+- [🗺 System Flow Diagram](#system-flow-diagram)
+
+---
+<a name="Overview"></a>
+## Overview
 Welcome to the **BaseOne Email Automation Agents Crew** project, powered by [Sensai](https://sensai-consulting.com).  
 This template is built to **automate email campaigns, responses, and communication** across various modalities using agentic AI workflows.
 
+This solution is built to:
+- Personalise outreach and campaign communication
+- Respond intelligently to customer replies
+- Provide data-driven insights and summaries
+- Coordinate multiple autonomous agents via a unified task flow
+
+It seamlessly integrates with your existing CRM and marketing tools, reducing time and complexity in building sophisticated multi-agent LLM applications.
+
 ---
+<a name="Solution Overview"></a>
+## 🧩 Solution Overview 
+
+This solution is powered by [Sensai](https://sensai-consulting.com) using a Python-based orchestration layer using [CrewAI](https://docs.crewai.com). It automates email campaign generation and handling through a crew of AI agents, each assigned specialised tasks.
+
+Agents are configured via structured YAML definitions and interact through event-driven flows defined in `main.py`. The AI models used can include OpenAI's GPT-4, Anthropic’s Claude, or any Bedrock-supported foundation models for AWS deployments.
+
+### Key Capabilities:
+- Multi-step orchestration of campaign generation and follow-ups
+- Intelligent summarisation of replies and lead insights
+- Integration-ready structure for CRMs and outreach platforms like GoHighLevel
+- Structured prompts and validation templates to avoid LLM hallucinations
+
+Anti-hallucination techniques used:
+- Clear step-by-step agent instructions
+- Agent memory and validation flows (e.g., self-check prompts)
+- Defined schema for outputs (via Pydantic models)
+- Controlled interaction via UI forms and input sanitisation
+
+---
+
+## 🏗 Workflow Architecture <a name="worfklowarchitecture"></a>
+
+![Workflow Diagram](./assets/crewai_ghl_architecture.png)
+
+## 🏗 AWS Architecture <a name="awsarchitecture"></a>
+![Workflow Diagram](./assets/aws_architecture.png)
+
+
+## 💰 Sample Monthly Cost Breakdown (100,000 Emails Processed)
+
+| **AWS Service**              | **Usage Description**                                   | **Cost (USD)** |
+|-----------------------------|----------------------------------------------------------|----------------|
+| Amazon API Gateway          | 1,000,000 REST API calls                                 | $3.50          |
+| Amazon Cognito              | 1,000 active users                                       | $0.00          |
+| Amazon S3                   | 100 GB storage, PUT/GET requests                         | $2.47          |
+| AWS Lambda                  | 500,000 requests (60ms, 1024MB)                          | $0.00          |
+| Amazon CloudWatch Logs      | 15 GB logs                                               | $7.57          |
+| Bedrock Agent (Claude 3)    | 100,000 queries (~6K in / 500 out tokens each)           | $2,550.00      |
+| **Total**                   |                                                          | **$2,563.54**  |
 
 ## 🚀 Installation
 
@@ -45,15 +111,16 @@ Before running, ensure you've set up your `.env` file with the required API keys
 
 You can customise agents, tasks, logic, tools, and input configurations:
 
-| File | Purpose |
-|------|---------|
-| `src/baseone_agents/analyst_crew/config/agents.yaml` | Define Analyst Crew agents |
-| `src/baseone_agents/email_crew/config/agents.yaml` | Define Email Crew agents |
-| `src/baseone_agents/analyst_crew/config/tasks.yaml` | Define Analyst Crew tasks |
-| `src/baseone_agents/email_crew/config/tasks.yaml` | Define Email Crew tasks |
-| `src/baseone_agents/crew.py` | Define overall logic, custom tools, and arguments |
-| `src/baseone_agents/main.py` | Add your own CLI or input logic |
-| `src/baseone_agents/tools/custom_tool.py` | Add custom tools (e.g., GHL BaseTool, BaseModel) |
+| Component | File | Purpose | Links |
+|-----------|------|---------|-------|
+| Anlayst Crew Agents | `src/baseone_agents/analyst_crew/config/agents.yaml` | Define Analyst Crew agents | https://docs.crewai.com/concepts/agents |
+| Email Crew Agents | `src/baseone_agents/email_crew/config/agents.yaml` | Define Email Crew agents | https://docs.crewai.com/concepts/agents |
+| Anlayst Crew Tasks | `src/baseone_agents/analyst_crew/config/tasks.yaml` | Define Analyst Crew tasks | https://docs.crewai.com/concepts/tasks |
+| Email Crew Tasks | `src/baseone_agents/email_crew/config/tasks.yaml` | Define Email Crew tasks | https://docs.crewai.com/concepts/tasks |
+| Crew | `src/baseone_agents/crew.py` | Define overall logic, custom tools, and arguments | https://docs.crewai.com/concepts/crews | 
+| Main Script| `src/baseone_agents/main.py` | Add your own CLI or input logic | https://docs.crewai.com/quickstart#build-your-first-crewai-agent |
+| Custom Tools | `src/baseone_agents/tools/custom_tool.py` | Add custom tools (e.g., GHL BaseTool, BaseModel) | https://docs.crewai.com/concepts/tools#creating-your-own-tools |
+| Flows Class | `src/baseone_agents/main.py` | Flow class in the main.py file allows you to create structured, event-driven workflows. They provide a seamless way to connect multiple tasks, manage state, and control the flow of execution in your AI applications. | https://docs.crewai.com/concepts/flows |
 
 > We're using [**Pydantic**](https://docs.pydantic.dev/latest/) for consistent, validated data ingestion and flow between agents.
 
@@ -111,3 +178,13 @@ Make sure to:
 
 **Built with 💡 by Sensai**  
 _Elevating enterprise efficiency through agentic intelligence_
+
+```mermaid```
+flowchart TD
+    Start --> Agent1[Email Agent]
+    Agent1 --> Agent2[Analyst Agent]
+    Agent2 --> Decision{Reply received?}
+    Decision -- Yes --> Agent3[Compose Response]
+    Decision -- No --> FollowUp[Send Follow-Up]
+    Agent3 --> End
+    FollowUp --> End
