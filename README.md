@@ -5,10 +5,10 @@
 - [🧩 Solution Overview](#-solution-overview)
 - [🏗 Workflow Architecture](#-workflow-architecture)
 - [🏗 AWS Architecture](#-aws-architecture)
-- [💰 Cost](#-cost)
+- [💰 Cost](#-sample-monthly-cost-breakdown-100000-emails-processed)
   - [💰 Sample Monthly Cost Breakdown (100,000 Emails Processed)](#-sample-monthly-cost-breakdown-100000-emails-processed)
 - [🚀 Installation](#-installation)
-- [⚙️ Configuration & Customisation](#-configuration--customisation)
+- [⚙️ Configuration & Customisation](#️-configuration--customisation)
 - [▶️ Running the Project](#-running-the-project)
 - [👥 Understanding Your Crew](#-understanding-your-crew)
 - [📞 Support](#-support)
@@ -50,15 +50,16 @@ Anti-hallucination techniques used:
 - Controlled interaction via UI forms and input sanitisation
 
 ---
-
-## 🏗 Workflow Architecture <a name="worfklowarchitecture"></a>
+<a name="Workflow Architecture"></a>
+## 🏗 Workflow Architecture 
 
 ![Workflow Diagram](./assets/crewai_ghl_architecture.png)
 
-## 🏗 AWS Architecture <a name="awsarchitecture"></a>
+<a name="AWS Architecture"></a>
+## 🏗 AWS Architecture 
 ![Workflow Diagram](./assets/aws_architecture.png)
 
-
+<a name="Costs"></a>
 ## 💰 Sample Monthly Cost Breakdown (100,000 Emails Processed)
 
 | **AWS Service**              | **Usage Description**                                   | **Cost (USD)** |
@@ -71,6 +72,7 @@ Anti-hallucination techniques used:
 | Bedrock Agent (Claude 3)    | 100,000 queries (~6K in / 500 out tokens each)           | $2,550.00      |
 | **Total**                   |                                                          | **$2,563.54**  |
 
+<a name="Installation"></a>
 ## 🚀 Installation
 
 > **Requirements**: Python `>=3.10` and `<3.13`
@@ -99,6 +101,7 @@ crewai install
 
 ---
 
+<a name="Configuration & Customisation"></a>
 ## ⚙️ Configuration & Customisation
 
 Before running, ensure you've set up your `.env` file with the required API keys.
@@ -126,6 +129,7 @@ You can customise agents, tasks, logic, tools, and input configurations:
 
 ---
 
+<a name="Running the Project"></a>
 ## ▶️ Running the Project
 
 Once configured, start the automation flow from the root directory:
@@ -138,10 +142,12 @@ This will launch the `baseone_agents` flow and activate your defined agents and 
 
 ---
 
+<a name="Understanding Your Crew"></a>
 ## 👥 Understanding Your Crew
 
 The **BaseOne Crew** is a set of autonomous AI agents, each assigned a specific role and goal. These agents collaborate through a defined set of tasks to execute complex workflows.
 
+<a name="Components Overview"></a>
 ### 🧩 Components Overview
 
 - **Agents Config:**  
@@ -157,6 +163,7 @@ The **BaseOne Crew** is a set of autonomous AI agents, each assigned a specific 
 
 ---
 
+<a name="Support"></a>
 ## 📞 Support
 
 Need help or have feedback?
@@ -166,6 +173,7 @@ Need help or have feedback?
 
 ---
 
+<a name="Final Notes"></a>
 ## ✅ Final Notes
 
 Make sure to:
@@ -178,13 +186,3 @@ Make sure to:
 
 **Built with 💡 by Sensai**  
 _Elevating enterprise efficiency through agentic intelligence_
-
-```mermaid```
-flowchart TD
-    Start --> Agent1[Email Agent]
-    Agent1 --> Agent2[Analyst Agent]
-    Agent2 --> Decision{Reply received?}
-    Decision -- Yes --> Agent3[Compose Response]
-    Decision -- No --> FollowUp[Send Follow-Up]
-    Agent3 --> End
-    FollowUp --> End
