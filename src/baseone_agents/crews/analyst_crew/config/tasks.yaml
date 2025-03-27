@@ -1,0 +1,55 @@
+data_enrichent:
+  description: >
+    Conduct a deep research on the following sales lead {lead_name} gathering infomration that we do not already have to build a more well-rounded understanding of the sales lead.
+    Focus on new information about the slaes lead to enrich the data we already have.
+    Take into account their entire history of workexperience, education, location, and interests.
+    Make sure to use their current role in {company} as a priority to understand the sales lead more.
+    This research is done to enable us to construct a persona and help craft an email with a specific tone suited to the sales lead. 
+  expected_output: >
+    A markdown report with the following sections:
+    1. Profile (including full name, d.o.b, location).
+    2. Entire workexperience.
+    3. Sector that they specialise in (e.g. Technology, retail, telcommunication, etc.).
+    4. Current Company they work in (e.g. Facebook, Microsoft, Instagram).
+    5. Current role and time spoent in the current role (e.g. current role: data analyst, Years: 4 years).
+    When generating the report in markdown use the corrct markdown stylistc characters like '#', "##", "###".
+  agent: sales_research_analyst
+
+
+communication_strategy:
+  description: >
+    Create a persona and choose a specific tone for {lead_name} using the information gathered.
+    Create a report with the persona and tone in JSON format.
+    Ensure a complete comprehension of {lead_name} workexperience, background, current role, years spent in their current role, current company {company} and all of the information gathered.
+    This report is generated to help craft an email that is engaging and relevant for {lead_name}.
+
+
+  expected_output: >
+    A JSON file with the the following keys: "persona" and "tone".
+    Example of the JSON file should be:
+    {
+      "persona": {
+        "name": "Sarah Thompson",
+        "role": "Head of Procurement",
+        "years": 4 years
+        "company": "LuxDecor Interiors",
+        "industry": "Luxury Home Décor",
+        "pain_points": [
+          "Struggles to find high-quality handcrafted products at scale",
+          "Needs reliable suppliers with consistent quality",
+          "Looking for exclusive and unique designs to differentiate her brand"
+        ],
+        "goals": [
+          "Source premium handcrafted home décor pieces",
+          "Build long-term supplier relationships",
+          "Increase customer satisfaction through unique offerings"
+        ],
+        "decision_making_process": "Values quality and reliability over price; prefers vendors with strong testimonials"
+      },
+      "tone": {
+        "style": "Professional yet warm",
+        "approach": "Consultative and value-driven",
+        "voice": "Confident, knowledgeable, and solution-oriented",
+        }
+    }
+  agent: sales_communication_strategist

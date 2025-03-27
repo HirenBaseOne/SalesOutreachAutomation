@@ -1,0 +1,72 @@
+email_drafting:
+  description: >
+    Generate a highly personalized and engaging email tailored to the lead's profile, industry, and previous interactions.
+    Ensure the message is concise, impactful, and aligned with the company's sales and engagement strategy.
+    
+    - Address the lead by name.
+    - Acknowledge their role, company, and relevant achievements.
+    - Clearly communicate Sensai’s value proposition in AI-driven automation.
+    - Ensure the email is professional, engaging, and designed to drive action.
+
+    Required Inputs:
+    - Personal Info: {personal_info}
+    - Company Info: {company_info}
+    - Lead Score: {lead_score}
+
+  expected_output: >
+    A personalized email draft that:
+    - Introduces Sensai Consulting’s value succinctly.
+    - Aligns with the lead’s needs and industry context.
+    - Includes persuasive yet professional language.
+
+
+email_optimization:
+  description: >
+    Analyze and refine the AI-generated email draft to enhance clarity, engagement, and persuasiveness.
+    Ensure the email follows best practices in email marketing, maintains a natural tone, and contains clear calls to action.
+
+    - Optimize sentence structure and word choice for maximum impact.
+    - Ensure the message is easy to read and aligned with high-converting email strategies.
+    - Remove unnecessary jargon or overly complex language.
+    - Improve the CTA (Call-to-Action) to increase engagement.
+    - Verify that the email aligns with best practices for email deliverability.
+
+    Required Inputs:
+    - Draft Email: {email_draft}
+
+  expected_output: >
+    An optimized email ready for sending, complete with:
+    - Strong CTAs
+    - Clear and engaging messaging
+    - Improved structure and readability
+
+
+send_email:
+  description: >
+    Send the finalised email via the GoHighLevel (GHL) API, ensuring all required parameters are correctly formatted.
+
+    Required Inputs:
+    - type (string): "Email" (indicates the message type).
+    - contactId (string): Unique identifier of the recipient in the GHL CRM.
+    - emailFrom (string): Sender’s email address.
+    - emailTo (string): Recipient’s email address.
+    - subject (string): Subject line of the email.
+    - message (string): Plain text version of the email.
+    - html (string): HTML-formatted email content.
+
+    Optional Inputs:
+    - emailCc (array[string]): CC email addresses.
+    - emailBcc (array[string]): BCC email addresses.
+    - attachments (array[string]): URLs of attached files.
+    - replyMessageId (string): Message ID for thread continuation.
+    - templateId (string): ID of a predefined template to use.
+    - threadId (string): Thread identifier for ongoing conversations.
+    - scheduledTimestamp (number): UTC timestamp for scheduling email delivery.
+    - conversationProviderId (string): ID of the conversation provider.
+    - emailReplyMode (string): Determines reply mode ("reply" or "reply_all").
+
+  expected_output: >
+    A confirmation response from GHL indicating that the email was successfully sent, including:
+    - Message ID
+    - Delivery status
+    - Any errors or warnings (if applicable)
