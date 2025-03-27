@@ -108,6 +108,7 @@ Before running, ensure you've set up your `.env` file with the required API keys
 ### 🔑 Add API Keys
 
 - Add your `OPENAI_API_KEY` to the `.env` file at the root of the project.
+- Add your `GHL_ACCESS_TOKEN` to the `.env` file at the root of the project.
 
 ### 🛠️ Define Your Agents and Tasks
 
