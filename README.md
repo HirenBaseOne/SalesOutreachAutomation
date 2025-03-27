@@ -9,11 +9,10 @@
   - [💰 Sample Monthly Cost Breakdown (100,000 Emails Processed)](#-sample-monthly-cost-breakdown-100000-emails-processed)
 - [🚀 Installation](#-installation)
 - [⚙️ Configuration & Customisation](#️-configuration--customisation)
-- [▶️ Running the Project](#-running-the-project)
+- [▶️ Running the Project](#️-running-the-project)
 - [👥 Understanding Your Crew](#-understanding-your-crew)
 - [📞 Support](#-support)
 - [✅ Final Notes](#-final-notes)
-- [🗺 System Flow Diagram](#system-flow-diagram)
 
 ---
 <a name="Overview"></a>
