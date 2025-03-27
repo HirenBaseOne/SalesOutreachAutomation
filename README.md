@@ -184,5 +184,5 @@ Make sure to:
 
 ---
 
-**Built by ![SensAI](./assets/Vignette_lkd.png)**  
+**Built by SensAI ![SensAI](./assets/Vignette_lkd.png)**  
 _Elevating enterprise efficiency through agentic intelligence_
