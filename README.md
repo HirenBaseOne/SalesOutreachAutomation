@@ -1,6 +1,6 @@
 # {{crew_name}} Crew
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the {{crew_name}} Crew project, powered by [SenAI](https://sensai-consulting.com). This template is designed to automate email campaigns, responses and communication across different modalities
 
 ## Installation
 
@@ -42,15 +42,11 @@ This example, unmodified, will run the create a `report.md` file with the output
 
 ## Understanding Your Crew
 
-The baseon_agents Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+The baseon_agents Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `src/baseone_agents/analyst_crew/config/tasks.yaml`and `src/baseone_agents/email_crew/config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `src/baseone_agents/analyst_crew/config/agents.yaml` and `src/baseone_agents/email_crew/config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
 ## Support
 
 For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
 
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+- Visit CrewAI documentation [documentation](https://docs.crewai.com)
+- Contact Sensai support team direct on our dedicated email [support](support@sensai-consulting.com)
