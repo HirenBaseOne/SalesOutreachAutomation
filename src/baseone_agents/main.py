@@ -84,9 +84,9 @@ def plot():
 
 
 input = {
-    "lead_name": ,
-    "company": ,
-    "": ,
+    "lead_name":'' ,
+    "company": '',
+    "": '',
 }
 
 if __name__ == "__main__":
