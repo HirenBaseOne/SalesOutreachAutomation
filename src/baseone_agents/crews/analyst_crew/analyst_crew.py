@@ -47,7 +47,7 @@ class AnalystCrew:
     @task
     def communication_strategy(self) -> Task:
         return Task(
-            config=self.tasks_config["communication_strategy"],
+            config=self.tasks_config["communication_strategy"],)
 
     @crew
     def crew(self) -> Crew:

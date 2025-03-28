@@ -178,10 +178,11 @@ Need help or have feedback?
 
 Make sure to:
 
-- Regularly update the agent/task configurations as your workflow evolves.
-- Keep dependencies up to date with `crewai install` as needed.
-- Reach out to the Sensai team for strategic improvements or bespoke automation needs.
-- Make sure to run your application within a Docker container to enable code execution within a safe environment and to isolate workflow processes.  This enables scalability and conforms to the best practises for production ready applications.
+- **Updates:** Regularly update the agent/task configurations as your workflow evolves.
+- **Dependancies:** Keep dependencies up to date with `crewai install` as needed.
+- **Docker:** Make sure to run your application within a Docker container to enable code execution within a safe environment and to isolate workflow processes.  This enables scalability and conforms to the best practises for production ready applications.
+- **Improvements:** Reach out to the Sensai team for strategic improvements or bespoke automation needs.
+
 
 ---
 
