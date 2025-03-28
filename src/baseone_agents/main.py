@@ -75,12 +75,12 @@ class SalesFlow(Flow[LeadInfo]):
 
 def kickoff():
     sales_flow = SalesFlow()
-    sales_flow_flow.kickoff()
+    sales_flow.kickoff()
 
 
 def plot():
     sales_flow = SalesFlow()
-    salesflow.plot()
+    SalesFlow.plot()
 
 
 input = {
