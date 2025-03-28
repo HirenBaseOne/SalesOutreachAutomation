@@ -71,6 +71,7 @@ Anti-hallucination techniques used:
 | Bedrock Agent (Claude 3)    | 100,000 queries (~6K in / 500 out tokens each)           | $2,550.00      |
 | **Total**                   |                                                          | **$2,563.54**  |
 
+> **AWS Pricing Calculator**: Use AWS calculator for up-to-date pricing [**AWS Calculator**](https://calculator.aws/#/)
 <a name="Installation"></a>
 ## 🚀 Installation
 
